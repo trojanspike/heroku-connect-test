@@ -11,6 +11,10 @@ module.exports = {
 			sails.sockets.blast('test', 'Title From Socket : '+process.env.NODE_ENV );
 		} , 10000);
 		res.view();
+	},
+
+	user : function(req, res){
+		res.json( process.env );
 	}
 };
 
