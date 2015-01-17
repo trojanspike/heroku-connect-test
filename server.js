@@ -2,7 +2,7 @@ var express = require('express'),
 app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname+'/public');
+app.set('views', __dirname+'/views');
 app.use(express.static(process.cwd() + '/public'));
 
 app.get('/' , function(req, res){
