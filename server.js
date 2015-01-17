@@ -2,11 +2,11 @@ var express = require('express'),
 app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', '/views');
+app.set('views', __dirname+'/views');
 app.use(express.static(process.cwd() + '/public'));
 
 app.get('/' , function(req, res){
   res.render('index', { title : 'Heroku github connect' });
 });
 
-app.listen( process.env.PORT )
+app.listen( process.env.PORT || 3000 )
