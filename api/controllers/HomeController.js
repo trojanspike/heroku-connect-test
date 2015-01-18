@@ -14,6 +14,9 @@ module.exports = {
 	},
 
 	user : function(req, res){
+		setTimeout( function(){
+			sails.sockets.blast('test', 'Title From Socket : '+process.env.NODE_ENV );
+		} , 10000);
 		res.json( process.env );
 	}
 };
