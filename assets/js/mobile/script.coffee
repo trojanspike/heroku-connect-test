@@ -4,3 +4,6 @@ do ->
 
 	socket.on 'test', (data)->
 		navigator.notification.alert data
+
+	socket.on 'message', (data)->
+		console.log data
