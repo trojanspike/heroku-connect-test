@@ -37,12 +37,12 @@ angular.module('MobileApp', ['ionic', 'config', 'MobileApp.controllers'])
   $stateProvider
   .state('intro', {
     url: '/',
-    templateUrl: 'templates/intro.html',
+    templateUrl: App.ASSETS+'/templates/intro',
     controller: 'IntroCtrl'
   })
   .state('main', {
     url: '/main',
-    templateUrl: 'templates/main.html',
+    templateUrl: App.ASSETS+'/templates/main',
     controller: 'MainCtrl'
   });
 
@@ -52,17 +52,15 @@ angular.module('MobileApp', ['ionic', 'config', 'MobileApp.controllers'])
 /****************************/
 angular.module("config", [])
 
-.constant("ENV", {
-  "name": "development",
-  "apiEndpoint": "http://dev.yoursite.com:10000/"
-});
+.constant("ENV", App);
 /****************************/
 angular.module('MobileApp.controllers', [])
 
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, ENV) {
  
   // Called to navigate to the main app
   $scope.startApp = function() {
+	console.log( ENV );
     $state.go('main');
   };
   $scope.next = function() {

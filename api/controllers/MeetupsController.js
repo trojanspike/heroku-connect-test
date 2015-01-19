@@ -1,5 +1,5 @@
 /*
-/app/a-meetups/assets/12456/en-UK/
+/app/a-meetups/assets/d732cd0a6a1de1ac/en-UK/
 /app/a-meetups/assets/:UUID/:lang/
 */
 var fs = require('fs'),
@@ -28,6 +28,12 @@ module.exports = {
 		} else {
 			res.send('No Avail ');
 		}
+	},
+
+	template : function(req, res){
+		res.setHeader('content-type', 'text/html');
+		var file = __dirname+'/../../AppAssets/cache/'+req.param('UUID')+'-'+req.param('lang')+'-template#'+req.param('template')+'.html';
+		res.send( fs.readFileSync( file , {encoding:'utf8'}) );
 	}
 
 }
