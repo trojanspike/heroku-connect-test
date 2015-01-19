@@ -19,14 +19,26 @@ module.exports = {
 		},
 
 	script : function(req, res){
+		// req.param('UUID')
 		res.setHeader('content-type', 'application/javascript');
-		var file = __dirname+'/../../AppAssets/cache/'+req.param('UUID')+'-'+req.param('lang')+'-script.js';
+		var file = $AppCache+'/'+req.param('lang')+'-script.js';
 		if( fs.existsSync(file) ){
 			fs.readFile(file, 'utf8' , function(err, content){
 				res.send( content );
 			});
 		} else {
-			res.send('No Avail ');
+			var CoffeeContent = '';
+			fs.readdir($AppAssets+'/Meetups/js/', function(err, dir){
+				dir.forEach(function(file){
+					if( /.*\.coffee/.test(file) ){
+						CoffeeContent+= coffee.compile( fs.readFileSync( $AppAssets+'/Meetups/js/'+file , {encoding:'utf8'} ) , {bare:true});
+					}
+				});
+				if( process.env.NODE_ENV === 'production' ){
+					fs.writeFileSync(file, CoffeeContent, {encoding:'utf8'});
+				}
+				res.send( CoffeeContent );
+			});
 		}
 	},
 

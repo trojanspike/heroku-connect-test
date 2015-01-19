@@ -8,6 +8,9 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.globals.html
  */
+global['$AppAssets'] = __dirname+'/../AppAssets';
+global['$AppCache'] = __dirname+'/../AppAssets/cache';
+
 module.exports.globals = {
 
   /****************************************************************************
