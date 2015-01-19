@@ -10,7 +10,8 @@ navigator.notification.activityStop();
 } , 5500);
 
 setTimeout( function(){
-navigator.app.exitApp()
+ // navigator.app.exitApp()
+	navigator.notification.alert('Alert --', 'Complete');
 } , 8500);
 
 
