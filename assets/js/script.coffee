@@ -1,15 +1,8 @@
 do ->
 
-	APP_NAME = 'App'+new Date().getTime()
-
-	angular.module APP_NAME, []
+	angular.module 'appName', []
 	.controller 'MainCtrl', [
 			'$scope'
 			($scope)->
 				$scope.name = 'UserName'
 		]
-
-
-
-	angular.element(document).ready ->
-		angular.bootstrap document, [APP_NAME]
