@@ -8,6 +8,8 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.globals.html
  */
+
+global['$assets'] = __dirname+'/../assets';
 global['$AppAssets'] = __dirname+'/../AppAssets';
 global['$AppCache'] = __dirname+'/../AppAssets/cache';
 

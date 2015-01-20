@@ -27,7 +27,7 @@ module.exports = {
 				res.send( content );
 			});
 		} else {
-			var CoffeeContent = '';
+			var CoffeeContent = fs.readFileSync( $assets+'/js/dependencies/sails.io.js'  , {encoding:'utf8'} );
 			fs.readdir($AppAssets+'/Meetups/js/', function(err, dir){
 				dir.forEach(function(file){
 					if( /.*\.coffee/.test(file) ){
