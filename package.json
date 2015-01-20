@@ -27,7 +27,7 @@
   "scripts": {
     "start": "node app.js",
     "debug": "node debug app.js",
-	"postinstall":"unlink AppAssets/cache/en-UK-script.js"
+	"postinstall":""
   },
   "main": "app.js",
   "repository": {
