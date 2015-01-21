@@ -29,6 +29,9 @@ module.exports.policies = {
   	'*': true,
 	'MeetupsController' : {
 		'*' : ['test']
+	},
+	'MessagesController' : {
+		'*' : ['isSocket']
 	}
 
   /***************************************************************************
