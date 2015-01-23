@@ -1,6 +1,21 @@
 <ion-view hide-back-button="false" title="Chat">
   <ion-content padding="true">
-    <h1>Chat area</h1>
-    <button class="button" ng-click="toIntro()">Do Tutorial Again</button>
+    <h1>{{ data }}</h1>
+
+    <div class="list">
+      <label class="item item-input hide">
+        <input type="text" ng-model="message" />
+      </label>
+
+      <button class="button button-full button-positive disabled" ng-click="send()">
+        Send
+      </button>
+
+      <ul>
+        <li ng-repeat="chat in chats"> {{ chat.message }} </li>
+      </ul>
+
+    </div>
+
   </ion-content>
 </ion-view>

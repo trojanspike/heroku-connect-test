@@ -1,5 +1,6 @@
 do ->
 
+
 	angular.module 'appName', []
 	.controller 'MainCtrl', [
 			'$scope'

@@ -1,3 +1,5 @@
+socket = io.connect App.APIpoint
+
 angular.module "MobileApp"
 .config ($stateProvider, $urlRouterProvider) ->
 
@@ -13,10 +15,9 @@ angular.module "MobileApp"
 		controller: "MainCtrl"
 
 	.state "chat",
-		url "/chat"
+		url : "/chat"
 		templateUrl : App.ASSETS + "/templates/chat"
-		controller : "chatCtrl"
-		controller: "MainCtrl"
+		controller: "ChatCtrl"
 
 	.state "test",
 		url: "/test"
@@ -25,3 +26,15 @@ angular.module "MobileApp"
 
 	$urlRouterProvider.otherwise "/intro"
 	return
+
+.controller "ChatCtrl", ($scope)->
+	$scope.data = 'hello world'
+	$scope.chats = []
+
+	socket.get '/chat', (obj)->
+		$scope.chats = obj
+		$scope.$apply()
+
+	socket.on 'chat', (obj)->
+		$scope.chats.push obj.data
+		$scope.$apply()
