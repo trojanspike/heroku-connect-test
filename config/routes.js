@@ -32,7 +32,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   '/': 'HomeController.index',
-	'/user125' : 'HomeController.user',
 	
 /*
 /app/a-meetups/assets/12456/en-UK/script.js
