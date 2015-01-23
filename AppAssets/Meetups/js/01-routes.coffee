@@ -12,6 +12,11 @@ angular.module "MobileApp"
 		templateUrl: App.ASSETS + "/templates/main"
 		controller: "MainCtrl"
 
+	.state "chat",
+		url "/chat"
+		templateUrl : App.ASSETS + "/templates/chat"
+		controller : "chatCtrl"
+
 	.state "test",
 		url: "/test"
 		templateUrl: "#tpl.html"
@@ -19,3 +24,8 @@ angular.module "MobileApp"
 
 	$urlRouterProvider.otherwise "/intro"
 	return
+
+.controller "chatCtrl",
+	["$scope"
+	($scope)->
+	]

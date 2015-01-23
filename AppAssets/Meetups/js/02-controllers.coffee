@@ -21,6 +21,10 @@ angular.module("MobileApp.controllers", []).controller("IntroCtrl", ($scope, $st
 ).controller "MainCtrl", ($scope, $state) ->
   console.log "MainCtrl"
   $scope.name = 'Lee -- '
+
+  $scope.toChat = ->
+    $state.go "chat"
+
   $scope.toIntro = ->
     $state.go "test"
     return
