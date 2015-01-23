@@ -1,5 +1,8 @@
+socket = io.connect App.APIpoint
+
 # Called each time the slide changes
-angular.module("MobileApp.controllers", []).controller("IntroCtrl", ($scope, $state, $ionicSlideBoxDelegate, ENV) ->
+angular.module("MobileApp.controllers", [])
+.controller "IntroCtrl", ($scope, $state, $ionicSlideBoxDelegate, ENV) ->
   $scope.startApp = ->
     console.log ENV
     $state.go "main"
@@ -18,7 +21,7 @@ angular.module("MobileApp.controllers", []).controller("IntroCtrl", ($scope, $st
     return
 
   return
-).controller "MainCtrl", ($scope, $state) ->
+.controller "MainCtrl", ($scope, $state) ->
   console.log "MainCtrl"
   $scope.name = 'Lee -- '
 
@@ -28,5 +31,27 @@ angular.module("MobileApp.controllers", []).controller("IntroCtrl", ($scope, $st
   $scope.toIntro = ->
     $state.go "test"
     return
+.controller "ChatCtrl", ($scope)->
+  $scope.input = {}
+  $scope.data = {}
+  $scope.data.hi = 'hello world'
+  $scope.data.chats = []
+
+  $scope.send = ->
+    socket.post '/chat',
+      message : $scope.input.message
+
+    $scope.data.chats.push
+      message : $scope.input.message
+    $scope.input.message = ''
+    $scope.$apply()
+
+  socket.get '/chat', (obj)->
+    $scope.data.chats = obj
+    $scope.$apply()
+
+  socket.on 'chat', (obj)->
+    $scope.data.chats.push obj.data
+    $scope.$apply()
 
   return

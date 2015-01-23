@@ -1,17 +1,3 @@
-console.log window.device
-setTimeout (->
-  navigator.notification.activityStart "Titlr", "mgs"
-  return
-), 1500
-setTimeout (->
-  navigator.notification.activityStop()
-  return
-), 5500
-setTimeout (->
-  navigator.notification.alert "Alert --", "Complete"
-  return
-), 8500
-
 angular.module("MobileApp", [
   "ionic"
   "config"
