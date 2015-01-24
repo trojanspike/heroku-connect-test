@@ -10,8 +10,17 @@
   </head>
 
   <body class="container" ng-cloak ng-app="appName">
-    <%- body %>
 
+  <!-- ########### -->
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <div class="navbar-header">
+          </div>
+      </div>
+  </nav>
+  <!-- ########### -->
+
+    <ui-view></ui-view>
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->
@@ -20,7 +29,14 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="/js/dependencies/ui-bootstrap-tpls.js"></script>
+    <script src="/js/dependencies/ui-bootstrap.js"></script>
+    <script src="/js/app/001-start.js"></script>
+    <script src="/js/app/chat/controllers.js"></script>
+    <script src="/js/app/chat/routes.js"></script>
+    <script src="/js/app/user/controllers.js"></script>
+    <script src="/js/app/user/route.js"></script>
+    <script src="/js/config.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

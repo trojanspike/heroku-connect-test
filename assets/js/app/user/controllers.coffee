@@ -1,0 +1,2 @@
+do ->
+  angular.module 'appName'

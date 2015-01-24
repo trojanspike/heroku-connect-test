@@ -44,7 +44,6 @@ angular.module("MobileApp.controllers", [])
     $scope.data.chats.push
       message : $scope.input.message
     $scope.input.message = ''
-    $scope.$apply()
 
   socket.get '/chat', (obj)->
     $scope.data.chats = obj
@@ -52,6 +51,5 @@ angular.module("MobileApp.controllers", [])
 
   socket.on 'chat', (obj)->
     $scope.data.chats.push obj.data
-    $scope.$apply()
 
   return

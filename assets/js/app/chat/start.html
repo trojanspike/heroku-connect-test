@@ -1,0 +1,21 @@
+
+<div class="row">
+    <div class="col-xs-4">
+        <form ng-submit="input.send()">
+
+            <textarea ng-model="input.message" id="" cols="30" rows="4"></textarea>
+
+            <div class="btn-group" role="group" aria-label="">
+                <button type="sunmit" class="btn btn-default">Send</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-xs-4">
+        <ul class="list-group">
+            <li ng-repeat="chat in data.chats" class="list-group-item">{{ chat.message }}</li>
+        </ul>
+    </div>
+
+</div>

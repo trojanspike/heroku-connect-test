@@ -31,7 +31,9 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-  '/': 'HomeController.index',
+  '/': {
+      view : 'home/index'
+  },
 	
 /*
 /app/a-meetups/assets/12456/en-UK/script.js

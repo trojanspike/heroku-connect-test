@@ -1,2 +1,5 @@
 module.exports =
-  attributes: {}
+  attributes:
+    message :
+      type : 'string'
+      required : true
