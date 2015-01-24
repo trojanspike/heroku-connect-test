@@ -12,6 +12,7 @@ do ->
       io.socket.get '/chat', (obj)->
         $scope.$apply ->
           $scope.data.chats = obj
+          window.Arr = obj
 
       io.socket.on 'chat', (obj)->
         $scope.$apply ->
@@ -22,5 +23,10 @@ do ->
           $scope.$apply ->
             $scope.data.chats.push obj
             $scope.input.message = ''
+
+      $scope.input.delete = (index, event)->
+        event.preventDefault()
+        io.socket.delete '/chat/'+$scope.data.chats[index]['id'], ()->
+
 
   ]
