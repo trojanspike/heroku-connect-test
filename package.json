@@ -35,8 +35,11 @@
     "start": "node app.js",
     "debug": "node debug app.js",
 	"preinstall" : "",
-    "postinstall": "npm run post",
-	"post":"node ./cgi_bin/postInstall.js"
+    "postinstall": "node ./cgi_bin/postInstall.js",
+	"post":""
+  },
+  "engines": {
+    "node": "0.10.x"
   },
   "main": "app.js",
   "repository": {
