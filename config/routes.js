@@ -31,8 +31,8 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-    '/': 'BaseController.front',
-    '/user' : 'BaseController.user',
+   '/': 'BaseController.front',
+   '/user' : 'BaseController.user',
 	
 /*
 /app/a-meetups/assets/12456/en-UK/script.js
