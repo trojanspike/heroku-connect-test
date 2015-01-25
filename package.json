@@ -35,7 +35,7 @@
     "start": "node app.js",
     "debug": "node debug app.js",
 	"preinstall" : "",
-    "postinstall": "./node_modules/bower/bin/bower install && ./cgi-bin/postInstall.js"
+    "postinstall": "./cgi-bin/postInstall.js"
   },
   "main": "app.js",
   "repository": {
