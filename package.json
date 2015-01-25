@@ -36,7 +36,7 @@
     "debug": "node debug app.js",
 	"preinstall" : "",
     "postinstall": "npm run post",
-	"post":"cgi_bin/postInstall.js"
+	"post":"node ./cgi_bin/postInstall.js"
   },
   "main": "app.js",
   "repository": {

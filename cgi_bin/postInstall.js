@@ -5,9 +5,9 @@
 var fs = require('fs'),
 exec = require('child_process').exec;
 
-var Bowerrc = fs.readFileSync('.bowerrc', {encoding:'utf8'}),
-BowerDir = JSON.parse(Bowerrc).directory;
-exec('node_modules/bower/bin/bower install', function(error, stdout, stderr){
+var Bowerrc = fs.readFileSync(__dirname+'/../.bowerrc', {encoding:'utf8'}),
+BowerDir = __dirname+'/../'+JSON.parse(Bowerrc).directory;
+exec(__dirname+'/../node_modules/bower/bin/bower install', function(error, stdout, stderr){
 
 	exec('rsync -avz '+BowerDir+'/* assets/js/00-components/' , function(error, stdout, stderr){
 
