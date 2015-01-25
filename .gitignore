@@ -41,9 +41,7 @@
 
 config/local.js
 MobileApp/
-assets/js/00-components/*
-!assets/js/00-components/git.index
-
+assets/js/00-components/
 
 
 
