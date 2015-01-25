@@ -16,7 +16,5 @@
     "tests"
   ],
   "dependencies": {
-    "ui-router": "~0.2.13",
-    "jquery": "~2.1.3"
   }
 }
