@@ -7,6 +7,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bower": "^1.3.12",
+    "bson": "^0.2.18",
     "coffee-script": "^1.8.0",
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
@@ -34,13 +35,13 @@
   "scripts": {
     "start": "node app.js",
     "debug": "node debug app.js",
-	"preinstall" : "",
+    "preinstall": "",
     "postinstall": "",
-	"bower":"./node_modules/coffee-script/bin/coffee ./cgi_bin/bower.coffee"
+    "bower": "./node_modules/coffee-script/bin/coffee ./cgi_bin/bower.coffee"
   },
   "engines": {
     "node": "0.10.x",
-	"npm":"2.1.*"
+    "npm": "2.1.*"
   },
   "main": "app.js",
   "repository": {
