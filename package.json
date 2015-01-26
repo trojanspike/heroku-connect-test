@@ -35,8 +35,8 @@
     "start": "node app.js",
     "debug": "node debug app.js",
 	"preinstall" : "",
-    "postinstall": "./node_modules/coffee-script/bin/coffee ./cgi_bin/postInstall.coffee",
-	"post":""
+    "postinstall": "",
+	"bower":"./node_modules/coffee-script/bin/coffee ./cgi_bin/bower.coffee"
   },
   "engines": {
     "node": "0.10.x",
