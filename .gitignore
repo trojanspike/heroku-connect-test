@@ -42,8 +42,14 @@
 config/local.js
 MobileApp/
 assets/js/00-components/
+cgi_bin/*.js
+assets/js/app/**/*.js
+assets/js/*.js
 
-
+api/controllers/*.js
+api/models/*.js
+api/policies/*.js
+api/services/*.js
 
 ################################################
 # Dependencies
