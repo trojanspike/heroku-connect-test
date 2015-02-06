@@ -3,6 +3,10 @@ do ->
   .controller 'ChatMainCtrl', [
     "$scope"
     ($scope)->
+
+      $scope.$on '$destroy', ->
+        alert '$scope destroyed'
+
       $scope.data = {}
       $scope.input = {}
 
